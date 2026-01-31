@@ -240,3 +240,14 @@ main .hero-img-section{
     height: 100%;
     border-radius: 10px;
 }
+
+
+/* cta section */
+.cta-section{
+    flex-direction: column;
+    background-color: var(--accent-light);
+    border-radius: 15px;
+    padding: 2rem 0px;
+    text-align: center;
+    gap: 1.8rem;
+}
