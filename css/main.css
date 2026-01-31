@@ -33,6 +33,16 @@ button{
     outline: 0;
 }
 
+h1{
+    font-size: 3.5rem;
+    color: var(--accent-dark);
+}
+
+p{
+    font-size: 1.4rem;
+    color: var(--accent-dark);
+}
+
 /* utility classes */
 
 .container{
@@ -59,7 +69,7 @@ header{
     width: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 1.4rem;
+    padding: 1.4rem 0px;
 }
 
 header .logo{
@@ -103,4 +113,38 @@ header .nav-link{
 
 .nav-link .link:hover{
     scale: 1.4;
+}
+
+
+/* main section */
+
+main{
+    background-color: red;
+    padding: 1.5rem 0px;
+}
+
+main .hero-text{
+    background-color: white;
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+}
+
+main .hero-text-action-btn{
+    width: 50%;
+    height: 70px;
+    background-color: var(--accent-dark);
+    font-size: 1.4rem;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid var(--accent-dark);
+    transition: .5s;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+main .hero-text-action-btn:hover{
+    background-color: white;
+    color: var(--accent-dark);
+    
 }
