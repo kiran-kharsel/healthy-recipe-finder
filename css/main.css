@@ -210,3 +210,23 @@ main .hero-img-section{
 .service-img img{
     width: 50px;
 }
+
+
+/* feature-section  */
+.feature-section{
+    background-color: red;
+    flex-direction: column;
+    padding: 2rem 0px;
+}
+
+.feature-section .feature-section-text {
+    background-color: green;
+}
+
+.feature-section .feature-heading{
+    margin-bottom: 1.5rem;
+}
+
+.feature-section .feature-desc{
+    margin-bottom: 1.2rem;
+}
