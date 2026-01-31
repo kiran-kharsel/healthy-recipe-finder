@@ -39,6 +39,16 @@ h1{
     color: var(--accent-dark);
 }
 
+h2{
+    font-size: 2.5rem;
+    color: var(--accent-dark);
+}
+
+h3{
+    font-size: 2rem;
+    color: var(--accent-dark);
+}
+
 p{
     font-size: 1.4rem;
     color: var(--accent-dark);
@@ -166,4 +176,37 @@ main .hero-img-section{
 .hero-img-section .hero-img{
     height: 100%;
     border-radius: 10px;
+}
+
+
+
+
+/* service section */
+
+.service-section{
+    padding: 2rem 0px;
+}
+
+.service-section .service-category{
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.service-section .service-panel{
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+}
+
+.service-section .service-img{
+    height: 75px;
+    width: 75px;
+    border-radius: 5px;
+    background-color: white;
+    justify-content: center;
+}
+
+.service-img img{
+    width: 50px;
 }
