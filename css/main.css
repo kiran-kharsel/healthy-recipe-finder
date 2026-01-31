@@ -59,6 +59,24 @@ p{
     display: none !important;
 }
 
+.cta-btn{
+    width: 50%;
+    height: 70px;
+    background-color: var(--accent-dark);
+    font-size: 1.4rem;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid var(--accent-dark);
+    transition: .5s;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cta-btn:hover{
+    background-color: white;
+    color: var(--accent-dark);
+    
+}
 
 /* nav bar */
 .header{
@@ -131,20 +149,9 @@ main .hero-text{
 }
 
 main .hero-text-action-btn{
-    width: 50%;
-    height: 70px;
-    background-color: var(--accent-dark);
-    font-size: 1.4rem;
-    color: white;
-    border-radius: 10px;
-    border: 1px solid var(--accent-dark);
-    transition: .5s;
-    font-weight: 500;
-    cursor: pointer;
+    
 }
 
 main .hero-text-action-btn:hover{
-    background-color: white;
-    color: var(--accent-dark);
-    
+   
 }
