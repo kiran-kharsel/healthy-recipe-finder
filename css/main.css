@@ -4,14 +4,20 @@
     box-sizing: border-box;
 }
 
+:root{
+    --accent-dark:#1E5128;
+    --accent-light:#ECF4E8;
+}
+
 body{
     height: 100vh;
     width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
-.icon{
-    width: 2rem;
+i{
+    font-size: 2rem;
 }
 
 a{
@@ -37,4 +43,64 @@ button{
 .flex{
     display: flex;
     align-items: center;
+}
+
+.hidden{
+    display: none !important;
+}
+
+
+/* nav bar */
+.header{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+header{
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1.4rem;
+}
+
+header .logo{
+    text-transform: capitalize;
+    color: var(--accent-dark);
+    font-size: 1.4rem;
+}
+
+header .hamburger-menu{
+    background-color: var(--accent-light);
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.hamburger-menu i{
+    color: var(--accent-dark);
+}
+
+header .nav-link{
+    background-color: var(--accent-light);
+    border-radius: 5px;
+    width: 100%;
+    height: 200px;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 1rem;
+    padding: 1rem 0px;
+
+}
+
+.nav-link .link{
+    padding: 10px 0px;
+    color: var(--accent-dark);
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.nav-link .link:hover{
+    scale: 1.4;
 }
