@@ -153,3 +153,56 @@ header .nav-link {
 .nav-link .link:hover {
   scale: 1.4;
 }
+
+
+@media (min-width: 1024px) {
+  .container {
+    width: 90%;
+    max-width: 1024px;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    color: var(--accent-dark);
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: var(--accent-dark);
+  }
+
+  h3 {
+    font-size: 2rem;
+    color: var(--accent-dark);
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: var(--accent-dark);
+    font-weight: 500;
+  }
+
+  .cta-btn {
+    width: 25%;
+  }
+
+  header .hamburger-menu {
+    display: none;
+  }
+
+  header .nav-link {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    padding: 0;
+    gap: 2rem;
+    background: transparent;
+    margin-top: 0px;
+  }
+
+  .nav-link .link {
+    font-size: 1.2rem;
+    padding: 0;
+  }
+}
