@@ -109,6 +109,14 @@ header .logo {
   font-size: 1.4rem;
 }
 
+.logo-section{
+  gap: 5px;
+}
+
+header .logo-section .logo-img{
+  width: 2.2rem;
+}
+
 header .hamburger-menu {
   background-color: var(--accent-light);
   padding: 8px;
