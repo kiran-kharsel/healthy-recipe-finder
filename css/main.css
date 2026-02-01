@@ -247,9 +247,9 @@ main .hero-img-section{
     flex-direction: column;
     background-color: var(--accent-light);
     border-radius: 15px;
-    padding: 2rem 0px;
+    padding: 2rem 1rem;
     text-align: center;
-    gap: 1.8rem;
+    gap: 2rem;
 }
 
 /* footer section */
