@@ -88,21 +88,20 @@ img{
 }
 
 .cta-btn:hover{
-    background-color: white;
+    background-color: var(--accent-light);
     color: var(--accent-dark);
-    
 }
 
 /* nav bar */
 .header{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 1.4rem 0px;
 }
 
 header{
     width: 100%;
     justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 1.4rem 0px;
+    flex-wrap: wrap;    
 }
 
 header .logo{
