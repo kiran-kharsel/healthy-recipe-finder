@@ -241,4 +241,42 @@ img {
 }
 
 /* dektop screens and up */
-@media (min-width: 1024px) {}
+@media (min-width: 1024px) {
+  .container {
+    width: 90%;
+    max-width: 1024px;
+  }
+
+  .healthy-recipes{
+    text-align: center;
+  }
+
+  .healthy-recipes p{
+    width: 70%;
+  }
+
+  .recipe-control{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .recipe-control .filter, .recipe-search-box{
+    max-width: 250px;
+  }
+
+  .recipe-card .recipe-img{
+    height: 450px;
+  }
+
+  .recipe-card button{
+    padding: 0.8rem;
+    width: 40%;
+    margin-inline: auto;
+    margin-top: 1rem;
+  }
+
+  .recipe-card .time{
+    justify-content: start;
+    gap: 2rem;
+  }
+}
