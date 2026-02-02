@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -89,7 +89,7 @@ img {
 .cta-btn:hover {
   background-color: var(--accent-light);
   color: var(--accent-dark);
-}
+} */
 
 /* nav bar */
 .header {
