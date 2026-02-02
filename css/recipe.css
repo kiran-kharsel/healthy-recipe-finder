@@ -95,7 +95,48 @@ img {
 /* main heading section */
 
 .healthy-recipes{
-  background-color: red;
   flex-direction: column;
   gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+/* recipe control section */
+
+.recipe-control{
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.recipe-control div{
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: white;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0px 10px;
+}
+
+.recipe-control .filter select{
+  height: 100%;
+  outline: 0;
+  border: 0;
+}
+
+
+.recipe-search-box i{
+  font-size: 1.2rem;
+}
+
+.recipe-search-box input{
+  height: 100%;
+  border: 0;
+  outline: 0;
+  width:95%;
+  padding-left: 10px;
+  font-size: 1rem;
 }
