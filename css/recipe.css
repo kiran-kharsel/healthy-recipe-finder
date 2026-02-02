@@ -200,9 +200,45 @@ img {
   border: 2px solid var(--accent-dark);
   cursor: pointer;
   transition: 1.4s;
+  text-transform: capitalize;
 }
 
 .recipe-card button:hover{
   background-color: white;
   color: var(--accent-dark);
 }
+
+
+
+
+
+/* media queries */
+
+/* Tablet screens and up */
+@media (min-width: 600px) {
+  .healthy-recipes{
+    text-align: center;
+  }
+
+  .healthy-recipes p{
+    width: 80%;
+  }
+
+  .recipe-control, .recipe-list{
+    width: 80%;
+  }
+
+  .recipe-card .recipe-img{
+    height: 450px;
+  }
+
+  .recipe-card button{
+    padding: 0.8rem;
+    width: 60%;
+    margin-inline: auto;
+    margin-top: 1rem;
+  }
+}
+
+/* dektop screens and up */
+@media (min-width: 1024px) {}
