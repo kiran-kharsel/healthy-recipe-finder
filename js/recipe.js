@@ -44,12 +44,16 @@ function loadRecipeList(list){
         <div class="recipe-img">
             <img src=${item.image} alt="">
         </div>
-        <h4 class="recipe-title">${item.name}</h4>
-        <p class="recipe-type">Meal Type: ${item.mealType}</p>
+        <div>
+            <h4 class="recipe-title">${item.name}</h4>
+            <p class="recipe-type">Meal Type: ${item.mealType}</p>
+        </div>
+        <div>
         <p class="serving"><i class="fa-solid fa-circle-user"></i> Serving: ${item.servings}</p>
         <div class="time">
-            <p class="prep-time"><i class="fa-solid fa-alarm-clock"></i> Prep time: ${item.prepTimeMinutes}min</p>
-            <p class="cook-time"><i class="fa-solid fa-utensils"></i> Cook time: ${item.cookTimeMinutes}min</p>
+        <p class="prep-time"><i class="fa-solid fa-alarm-clock"></i> Prep time: ${item.prepTimeMinutes}min</p>
+        <p class="cook-time"><i class="fa-solid fa-utensils"></i> Cook time: ${item.cookTimeMinutes}min</p>
+        </div>
         </div>
         <button class="view-recipe">view recipe</button>
         `;
