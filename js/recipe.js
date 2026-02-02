@@ -45,7 +45,7 @@ function loadRecipeList(list){
             <img src=${item.image} alt="">
         </div>
         <h4 class="recipe-title">${item.name}</h4>
-        <p class="recipe-desc">this is desc....</p>
+        <p class="recipe-type">Meal Type: ${item.mealType}</p>
         <p class="serving"><i class="fa-solid fa-circle-user"></i> Serving: ${item.servings}</p>
         <div class="time">
             <p class="prep-time"><i class="fa-solid fa-alarm-clock"></i> Prep time: ${item.prepTimeMinutes}min</p>
