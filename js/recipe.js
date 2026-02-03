@@ -12,6 +12,9 @@ const recipeModalPreptime = recipeModal.querySelector('.prep-time')
 const recipeModalCooktime = recipeModal.querySelector('.cook-time')
 const recipeIngredients = recipeModal.querySelector('.recipe-ingredients ul')
 const recipeInstruction = recipeModal.querySelector('.recipe-instruction ol')
+const closeModalBtn = recipeModal.querySelector('.close-modal')
+
+
 
 // api call to get data
 async function getRecipe() {
@@ -68,17 +71,20 @@ function loadRecipeList(list){
 
 
 
-// view recipe on btn click
+// view recipe modal on btn click
 async function viewRecipe(recipeID){
-  console.log('view recipe')
   recipeModal.showModal()
   const recipeData = await getSingleRecipe(recipeID)
-  console.log(recipeData)
 
   recipeModalImg.src = recipeData.image;
   recipeModalTitle.innerHTML = recipeData.name;
   recipeModalType.innerHTML = recipeData.mealType;
   recipeModalServing.innerHTML = `Serving: ${recipeData.servings}`
+
+  // empty instruction and ingredient list
+  recipeIngredients.innerHTML = '';
+  recipeInstruction.innerHTML = '';
+
 
   recipeData.ingredients.forEach((item) => {
     const li = document.createElement('li')
@@ -120,3 +126,9 @@ async function getSingleRecipe(recipeID){
   }
   
 }
+
+
+// close modal
+closeModalBtn.addEventListener('click', function(){
+  recipeModal.close()
+})
