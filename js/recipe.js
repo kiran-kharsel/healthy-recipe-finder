@@ -3,12 +3,15 @@ let recipeList = [];
 
 const recipeListElem = document.querySelector('.recipe-list')
 const recipeModal = document.querySelector('#recipeModal')
+
 const recipeModalImg = recipeModal.querySelector('.recipeModal-img img')
 const recipeModalTitle = recipeModal.querySelector('.recipeModal-title')
 const recipeModalType = recipeModal.querySelector('.recipeModal-type')
 const recipeModalServing = recipeModal.querySelector('.serving')
 const recipeModalPreptime = recipeModal.querySelector('.prep-time')
 const recipeModalCooktime = recipeModal.querySelector('.cook-time')
+const recipeIngredients = recipeModal.querySelector('.recipe-ingredients ul')
+const recipeInstruction = recipeModal.querySelector('.recipe-instruction ol')
 
 // api call to get data
 async function getRecipe() {
@@ -76,6 +79,20 @@ async function viewRecipe(recipeID){
   recipeModalTitle.innerHTML = recipeData.name;
   recipeModalType.innerHTML = recipeData.mealType;
   recipeModalServing.innerHTML = `Serving: ${recipeData.servings}`
+
+  recipeData.ingredients.forEach((item) => {
+    const li = document.createElement('li')
+    li.innerHTML = item
+    recipeIngredients.appendChild(li)
+  })
+
+  recipeData.instructions.forEach((item) => {
+    const li = document.createElement('li')
+    li.innerHTML = item
+    recipeInstruction.appendChild(li)
+  })
+
+  
 }
 
 
