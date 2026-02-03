@@ -66,21 +66,24 @@
 
 
     <!-- recipe modal section -->
-    <dialog id="recipeModal">
+    <dialog id="recipeModal" class="flex">
         <div class="recipeModal-img">
             <img src="recipe-img" alt="recipe-img">
-            <div class="clode-modal">
+            <div class="close-modal">
                 <i class="fa-solid fa-x"></i>
             </div>
         </div>
-        <h2 class="recipeModal-title">Modal Title</h2>
-        <p class="recipeModal-type">This is the content of the modal.</p>
+        <div class="recipeModal-heading">
+            <h2 class="recipeModal-title">Modal Title</h2>
+            <p class="recipeModal-type">This is the content of the modal.</p>
+        </div>
+
         <div class="recipeModal-time">
             <p class="serving"><i class="fa-solid fa-circle-user"></i> Serving: 5</p>
             <p class="prep-time"><i class="fa-solid fa-alarm-clock"></i> Prep time: 15min</p>
             <p class="cook-time"><i class="fa-solid fa-utensils"></i> Cook time: 10min</p>
         </div>
-        <div class="recipe-detail">
+        <div class="recipe-detail flex">
             <div class="recipe-ingredients">
                 <p>Ingredients</p>
                 <ul>

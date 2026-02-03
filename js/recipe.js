@@ -2,8 +2,8 @@
 let recipeList = [];
 
 const recipeListElem = document.querySelector('.recipe-list')
-
-
+const recipeModal = document.querySelector('#recipeModal')
+console.log(recipeModal)
 
 // api call to get data
 async function getRecipe() {
@@ -51,10 +51,17 @@ function loadRecipeList(list){
                     <p class="prep-time"><i class="fa-solid fa-alarm-clock"></i> Prep time: ${item.prepTimeMinutes}min</p>
                     <p class="cook-time"><i class="fa-solid fa-utensils"></i> Cook time: ${item.cookTimeMinutes}min</p>
                 </div>
-        <button class="view-recipe">view recipe</button>
+        <button onclick='viewRecipe()' class="view-recipe">view recipe</button>
         `;
         recipeListElem.appendChild(div)
 
     });
 }
 
+
+
+// view recipe on btn click
+function viewRecipe(){
+  console.log('view recipe')
+  recipeModal.showModal()
+}
