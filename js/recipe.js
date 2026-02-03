@@ -3,7 +3,12 @@ let recipeList = [];
 
 const recipeListElem = document.querySelector('.recipe-list')
 const recipeModal = document.querySelector('#recipeModal')
-console.log(recipeModal)
+const recipeModalImg = recipeModal.querySelector('.recipeModal-img img')
+const recipeModalTitle = recipeModal.querySelector('.recipeModal-title')
+const recipeModalType = recipeModal.querySelector('.recipeModal-type')
+const recipeModalServing = recipeModal.querySelector('.serving')
+const recipeModalPreptime = recipeModal.querySelector('.prep-time')
+const recipeModalCooktime = recipeModal.querySelector('.cook-time')
 
 // api call to get data
 async function getRecipe() {
@@ -51,7 +56,7 @@ function loadRecipeList(list){
                     <p class="prep-time"><i class="fa-solid fa-alarm-clock"></i> Prep time: ${item.prepTimeMinutes}min</p>
                     <p class="cook-time"><i class="fa-solid fa-utensils"></i> Cook time: ${item.cookTimeMinutes}min</p>
                 </div>
-        <button onclick='viewRecipe()' class="view-recipe">view recipe</button>
+        <button onclick='viewRecipe(${item.id})' class="view-recipe">view recipe</button>
         `;
         recipeListElem.appendChild(div)
 
@@ -61,7 +66,40 @@ function loadRecipeList(list){
 
 
 // view recipe on btn click
-function viewRecipe(){
+async function viewRecipe(recipeID){
   console.log('view recipe')
   recipeModal.showModal()
+  const recipeData = await getSingleRecipe(recipeID)
+  console.log(recipeData)
+
+  recipeModalImg.src = recipeData.image;
+  recipeModalTitle.innerHTML = recipeData.name;
+  recipeModalType.innerHTML = recipeData.mealType;
+  recipeModalServing.innerHTML = `Serving: ${recipeData.servings}`
+}
+
+
+async function getSingleRecipe(recipeID){
+  // fetch data
+  try {
+    // Await the API call
+    const response = await fetch(`https://dummyjson.com/recipes/${recipeID}`);
+
+    // Check if response is OK
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    // Parse JSON
+    const data = await response.json();
+
+    // Use the data
+    console.log(data)
+    return data
+
+  } catch (error) {
+    // Handle errors
+    console.error("Error fetching meals:", error);
+  }
+  
 }
