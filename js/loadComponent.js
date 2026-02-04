@@ -14,3 +14,4 @@ async function loadSnippet(id, file) {
 
 // load header and footer
 loadSnippet("header", "components/header.html");
+loadSnippet("footer", "components/footer.html");
