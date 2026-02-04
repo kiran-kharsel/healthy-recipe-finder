@@ -42,10 +42,27 @@ getRecipe();
 
 // function to display recipes list
 function loadRecipeList(list) {
+  const recipes = list.recipes || list;
   // empty list
   recipeListElem.innerHTML = "";
 
-  list.forEach((item) => {
+  console.log(recipes)
+
+
+  // check for undefined or empt list
+  if(!recipes || recipes.length === 0){
+    recipeListElem.innerHTML = `
+    <div>
+    <h2>No recipes found .</h2>
+
+      <p>Try searching with different keywords or check popular recipes below.</p>
+          </div>
+    `;
+    return;
+
+  }
+
+  recipes.forEach((item) => {
     const div = document.createElement("div");
     div.classList.add("recipe-card", "flex");
     // or div.className = 'recipe-card flex';
@@ -147,8 +164,9 @@ function debounce(fn, delay = 500) {
 
       // schedule new execution
       timer = setTimeout(() => {
-        const result = fn.apply(this, args); // this fn return a promise
-        resolve(result);
+        const result = fn.apply(this, args);
+        console.log(result) // this fn return a promise
+        resolve(result || []);
       }, delay);
     });
   };
