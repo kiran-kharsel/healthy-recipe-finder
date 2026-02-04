@@ -1,20 +1,19 @@
 // data array
 let recipeList = [];
 
-const recipeListElem = document.querySelector('.recipe-list')
-const recipeModal = document.querySelector('#recipeModal')
+const recipeListElem = document.querySelector(".recipe-list");
+const recipeModal = document.querySelector("#recipeModal");
+const recipeSearchInput = document.querySelector(".recipe-search-input");
 
-const recipeModalImg = recipeModal.querySelector('.recipeModal-img img')
-const recipeModalTitle = recipeModal.querySelector('.recipeModal-title')
-const recipeModalType = recipeModal.querySelector('.recipeModal-type')
-const recipeModalServing = recipeModal.querySelector('.serving')
-const recipeModalPreptime = recipeModal.querySelector('.prep-time')
-const recipeModalCooktime = recipeModal.querySelector('.cook-time')
-const recipeIngredients = recipeModal.querySelector('.recipe-ingredients ul')
-const recipeInstruction = recipeModal.querySelector('.recipe-instruction ol')
-const closeModalBtn = recipeModal.querySelector('.close-modal')
-
-
+const recipeModalImg = recipeModal.querySelector(".recipeModal-img img");
+const recipeModalTitle = recipeModal.querySelector(".recipeModal-title");
+const recipeModalType = recipeModal.querySelector(".recipeModal-type");
+const recipeModalServing = recipeModal.querySelector(".serving");
+const recipeModalPreptime = recipeModal.querySelector(".prep-time");
+const recipeModalCooktime = recipeModal.querySelector(".cook-time");
+const recipeIngredients = recipeModal.querySelector(".recipe-ingredients ul");
+const recipeInstruction = recipeModal.querySelector(".recipe-instruction ol");
+const closeModalBtn = recipeModal.querySelector(".close-modal");
 
 // api call to get data
 async function getRecipe() {
@@ -31,9 +30,8 @@ async function getRecipe() {
     const data = await response.json();
 
     // Use the data
-    recipeList = [...data.recipes]
-    loadRecipeList(recipeList)
-
+    recipeList = [...data.recipes];
+    loadRecipeList(recipeList);
   } catch (error) {
     // Handle errors
     console.error("Error fetching meals:", error);
@@ -42,16 +40,17 @@ async function getRecipe() {
 
 getRecipe();
 
-
 // function to display recipes list
-function loadRecipeList(list){
-    console.log(list)
-    list.forEach((item) => {
-        const div = document.createElement('div')
-        div.classList.add('recipe-card', 'flex')
-        // or div.className = 'recipe-card flex';
-        
-        div.innerHTML = `
+function loadRecipeList(list) {
+  // empty list
+  recipeListElem.innerHTML = "";
+
+  list.forEach((item) => {
+    const div = document.createElement("div");
+    div.classList.add("recipe-card", "flex");
+    // or div.className = 'recipe-card flex';
+
+    div.innerHTML = `
         <div class="recipe-img">
             <img src=${item.image} alt="">
         </div>
@@ -64,45 +63,38 @@ function loadRecipeList(list){
                 </div>
         <button onclick='viewRecipe(${item.id})' class="view-recipe">view recipe</button>
         `;
-        recipeListElem.appendChild(div)
-
-    });
+    recipeListElem.appendChild(div);
+  });
 }
 
-
-
 // view recipe modal on btn click
-async function viewRecipe(recipeID){
-  recipeModal.showModal()
-  const recipeData = await getSingleRecipe(recipeID)
+async function viewRecipe(recipeID) {
+  recipeModal.showModal();
+  const recipeData = await getSingleRecipe(recipeID);
 
   recipeModalImg.src = recipeData.image;
   recipeModalTitle.innerHTML = recipeData.name;
   recipeModalType.innerHTML = recipeData.mealType;
-  recipeModalServing.innerHTML = `Serving: ${recipeData.servings}`
+  recipeModalServing.innerHTML = `Serving: ${recipeData.servings}`;
 
   // empty instruction and ingredient list
-  recipeIngredients.innerHTML = '';
-  recipeInstruction.innerHTML = '';
-
+  recipeIngredients.innerHTML = "";
+  recipeInstruction.innerHTML = "";
 
   recipeData.ingredients.forEach((item) => {
-    const li = document.createElement('li')
-    li.innerHTML = item
-    recipeIngredients.appendChild(li)
-  })
+    const li = document.createElement("li");
+    li.innerHTML = item;
+    recipeIngredients.appendChild(li);
+  });
 
   recipeData.instructions.forEach((item) => {
-    const li = document.createElement('li')
-    li.innerHTML = item
-    recipeInstruction.appendChild(li)
-  })
-
-  
+    const li = document.createElement("li");
+    li.innerHTML = item;
+    recipeInstruction.appendChild(li);
+  });
 }
 
-
-async function getSingleRecipe(recipeID){
+async function getSingleRecipe(recipeID) {
   // fetch data
   try {
     // Await the API call
@@ -117,18 +109,63 @@ async function getSingleRecipe(recipeID){
     const data = await response.json();
 
     // Use the data
-    console.log(data)
-    return data
-
+    console.log(data);
+    return data;
   } catch (error) {
     // Handle errors
     console.error("Error fetching meals:", error);
   }
-  
 }
 
-
 // close modal
-closeModalBtn.addEventListener('click', function(){
-  recipeModal.close()
-})
+closeModalBtn.addEventListener("click", function () {
+  recipeModal.close();
+});
+
+// search any recipe
+recipeSearchInput.addEventListener("input", function (e) {
+  debounceSearch(e.target.value).then((data) => {
+    // show in ui
+    loadRecipeList(data);
+  });
+});
+
+const debounceSearch = debounce(searchRecipes);
+
+// debounce function
+function debounce(fn, delay = 500) {
+  let timer; //store timeout id
+  let reslovePromise; // store sesolver
+
+  return function (...args) {
+    // clear prev timer if fn called again
+    clearTimeout(timer);
+
+    //must return a promse as searchrcipe returnig a promise
+    return new Promise((resolve) => {
+      //reslovePromise = resolve;
+
+      // schedule new execution
+      timer = setTimeout(() => {
+        const result = fn.apply(this, args); // this fn return a promise
+        resolve(result);
+      }, delay);
+    });
+  };
+}
+
+function searchRecipes(query) {
+  // step1 - filter in existing data
+  const result = recipeList.filter((recipe) =>
+    recipe.name.toLowerCase().includes(query.toLowerCase()),
+  );
+
+  // step2 - if no local result, then hit api for fresh data
+  if (result.length > 0) {
+    return Promise.resolve(result);
+  } else {
+    return fetch(`https://dummyjson.com/recipes/search?q=${query}`).then(
+      (res) => res.json(),
+    );
+  }
+}
