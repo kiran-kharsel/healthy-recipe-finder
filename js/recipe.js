@@ -1,10 +1,16 @@
 // data array
 let recipeList = [];
 
+// list section
 const recipeListElem = document.querySelector(".recipe-list");
 const recipeModal = document.querySelector("#recipeModal");
-const recipeSearchInput = document.querySelector(".recipe-search-input");
 
+// filter section
+const recipeSearchInput = document.querySelector(".recipe-search-input");
+const cookTimeSelect = document.querySelector('#cook-time')
+const prepTimeSelect = document.querySelector('#prep-time')
+
+// modal section
 const recipeModalImg = recipeModal.querySelector(".recipeModal-img img");
 const recipeModalTitle = recipeModal.querySelector(".recipeModal-title");
 const recipeModalType = recipeModal.querySelector(".recipeModal-type");
@@ -14,6 +20,10 @@ const recipeModalCooktime = recipeModal.querySelector(".cook-time");
 const recipeIngredients = recipeModal.querySelector(".recipe-ingredients ul");
 const recipeInstruction = recipeModal.querySelector(".recipe-instruction ol");
 const closeModalBtn = recipeModal.querySelector(".close-modal");
+
+
+
+
 
 // api call to get data
 async function getRecipe() {
@@ -188,3 +198,21 @@ function searchRecipes(query) {
     );
   }
 }
+
+
+
+// select prep time
+prepTimeSelect.addEventListener('change', function(e){
+  console.log(e.target.value)
+  // value
+  const prepTime = Number(e.target.value);
+  console.log(typeof prepTime)
+
+  // filter array, if prep time is equal and less than
+  const filteredData = recipeList.filter((item) => 
+      item.prepTimeMinutes <= prepTime 
+  )
+
+  console.log(filteredData)
+  loadRecipeList(filteredData)
+})
