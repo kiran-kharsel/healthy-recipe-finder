@@ -43,11 +43,9 @@ getRecipe();
 // function to display recipes list
 function loadRecipeList(list) {
   const recipes = list.recipes || list;
+  
   // empty list
   recipeListElem.innerHTML = "";
-
-  console.log(recipes)
-
 
   // check for undefined or empt list
   if(!recipes || recipes.length === 0){
@@ -164,8 +162,7 @@ function debounce(fn, delay = 500) {
 
       // schedule new execution
       timer = setTimeout(() => {
-        const result = fn.apply(this, args);
-        console.log(result) // this fn return a promise
+        const result = fn.apply(this, args);// this fn return a promise
         resolve(result || []);
       }, delay);
     });
@@ -175,7 +172,11 @@ function debounce(fn, delay = 500) {
 function searchRecipes(query) {
   // step1 - filter in existing data
   const result = recipeList.filter((recipe) =>
-    recipe.name.toLowerCase().includes(query.toLowerCase()),
+    recipe.name.toLowerCase().includes(query.toLowerCase()) ||
+    recipe.ingredients.some(ingredient =>
+    ingredient.toLowerCase().includes(query.toLowerCase())
+  )
+
   );
 
   // step2 - if no local result, then hit api for fresh data
