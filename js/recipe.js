@@ -7,7 +7,12 @@ const recipeModal = document.querySelector("#recipeModal");
 
 // filter section
 const recipeSearchInput = document.querySelector(".recipe-search-input");
-const prepTimeSelect = document.querySelector('#prep-time')
+const prepTimeSelect = document.querySelector('.selectField')
+const prepTimeSelectText = prepTimeSelect.querySelector('p')
+const prepTimeOptionList = document.querySelector('.selector .option-list')
+const prepTimeOption = document.querySelectorAll('.selector .option')
+
+
 const cookTimeSelect = document.querySelector('#cook-time')
 
 // modal section
@@ -134,7 +139,6 @@ async function getSingleRecipe(recipeID) {
     const data = await response.json();
 
     // Use the data
-    console.log(data);
     return data;
   } catch (error) {
     // Handle errors
@@ -202,23 +206,38 @@ function searchRecipes(query) {
 
 
 // select prep time
-prepTimeSelect.addEventListener('change', function(e){
-  sortTime(e.target.value)
-})
+// prepTimeSelect.addEventListener('change', function(e){
+//   sortTime(e.target.value)
+// })
 
-cookTimeSelect.addEventListener('change', function(e){
-  sortTime(e.target.value)
-})
+// cookTimeSelect.addEventListener('change', function(e){
+//   sortTime(e.target.value)
+// })
 
-// sort time function
-function sortTime(value){
-  // value
-  const prepTime = Number(value);
+// // sort time function
+// function sortTime(value){
+//   // value
+//   const prepTime = Number(value);
 
-  // filter array, if prep time is equal and less than
-  const filteredData = recipeList.filter((item) => 
-      item.cookTimeMinutes <= prepTime 
-  )
+//   // filter array, if prep time is equal and less than
+//   const filteredData = recipeList.filter((item) => 
+//       item.cookTimeMinutes <= prepTime 
+//   )
 
-  loadRecipeList(filteredData)
+//   loadRecipeList(filteredData)
+// }
+
+
+// select prep time
+prepTimeSelect.addEventListener('click', function(){
+  prepTimeOptionList.classList.toggle('hidden')
+});
+
+
+for(option of prepTimeOption){
+  console.log(option)
+  option.onclick = function(){
+    prepTimeSelectText.innerHTML = this.textContent;
+    prepTimeOptionList.classList.add('hidden')
+  }
 }
