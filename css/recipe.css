@@ -123,14 +123,19 @@ img {
   border: 1px solid lightgray;
   cursor: pointer;
   text-align: center;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: 0.4s;
+}
+
+.selector .selectField:hover{
+  border-color: grey;
 }
 
 .selectField i {
   font-size: 1.2rem;
+  color: var(--accent-dark);
 }
 
 .selectField p {
@@ -173,10 +178,16 @@ img {
   gap: 20epx;
   padding: 0px 20px;
   height: 40px;
+  transition: 0.4s;
+}
+
+.recipe-search-box:hover{
+  border-color: grey;
 }
 
 .recipe-search-box i {
   font-size: 1.2rem;
+  color: var(--accent-dark);
 }
 
 .recipe-search-box input {
@@ -367,6 +378,7 @@ img {
   align-items: start;
   gap: 1rem;
   margin-bottom: 1rem;
+  color: var(--accent-dark);
 }
 
 .recipe-ingredients ul {
@@ -390,6 +402,12 @@ img {
   color: var(--accent-dark);
   font-size: 1rem;
 }
+
+
+
+
+
+
 
 /* media queries */
 
