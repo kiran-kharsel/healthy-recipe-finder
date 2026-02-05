@@ -30,10 +30,9 @@
     </main>
 
     <section class="recipe-control container flex">
-        <div class="max-prep filter">
+        <!-- <div class="max-prep filter">
             <label for="prep-time">Max Prep Time:</label>
             <select id="prep-time" name="prep-time">
-                <option value=""></option>
                 <option value="5">5 min</option>
                 <option value="10">10 min</option>
                 <option value="15">15 min</option>
@@ -42,12 +41,26 @@
                 <option value="45">45 min</option>
                 <option value="60">60 min</option>
             </select>
-        </div>
+        </div> -->
 
+        <div class="selector prep-time">
+            <div class="selectField">
+                <p>Max Prep Time:</p>
+            </div>
+            <ul class="option-list">
+                <li class="option" value="5">Max Prep Time: 5min</li>
+                <li class="option" value="10">Max Prep Time: 10min</li>
+                <li class="option" value="15">Max Prep Time: 15min</li>
+                <li class="option" value="20">Max Prep Time: 20min</li>
+                <li class="option" value="30">Max Prep Time: 30min</li>
+                <li class="option" value="45">Max Prep Time: 45min</li>
+                <li class="option" value="60">Max Prep Time: 60min</li>
+            </ul>
+        </div>
+<!-- 
         <div class="max-cook filter">
-            <label for="cook-time"></label>
             <select id="cook-time" name="cook-time">
-                <option value="">Max Cook Time</option>
+                <option value="">Max Cook Time:</option>
                 <option value="5">5 min</option>
                 <option value="10">10 min</option>
                 <option value="15">15 min</option>
@@ -56,16 +69,16 @@
                 <option value="45">45 min</option>
                 <option value="60">60 min</option>
             </select>
-        </div>
-        <div class="recipe-search-box">
+        </div> -->
+        <!-- <div class="recipe-search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" class="recipe-search-input" placeholder="search by name...">
-        </div>
+        </div> -->
     </section>
 
 
-    <section class="recipe-list container flex">
-    </section>
+    <!-- <section class="recipe-list container flex">
+    </section> -->
 
 
     <section id="footer" class="footer">
