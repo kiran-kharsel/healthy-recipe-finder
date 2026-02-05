@@ -30,32 +30,36 @@
     </main>
 
     <section class="recipe-control container flex">
-        <!-- <div class="max-prep filter">
-            <label for="prep-time">Max Prep Time:</label>
-            <select id="prep-time" name="prep-time">
-                <option value="5">5 min</option>
-                <option value="10">10 min</option>
-                <option value="15">15 min</option>
-                <option value="20">20 min</option>
-                <option value="30">30 min</option>
-                <option value="45">45 min</option>
-                <option value="60">60 min</option>
-            </select>
-        </div> -->
-
-        <div class="selector prep-time flex">
-            <div class="selectField">
+        
+        <div id="prep-time-selector" class="selector flex">
+            <div id="prepSelectField" class="selectField">
                 <p>Max Prep Time</p>
                 <i class="fa-solid fa-angle-down"></i>
             </div>
-            <ul class="option-list hidden">
-                <li class="option" value="5">Max Prep Time: 5min</li>
-                <li class="option" value="10">Max Prep Time: 10min</li>
-                <li class="option" value="15">Max Prep Time: 15min</li>
-                <li class="option" value="20">Max Prep Time: 20min</li>
-                <li class="option" value="30">Max Prep Time: 30min</li>
-                <li class="option" value="45">Max Prep Time: 45min</li>
-                <li class="option" value="60">Max Prep Time: 60min</li>
+            <ul class="prep-option-list option-list hidden">
+                <li class="prep-option option" value="5">Max Prep Time: 5min</li>
+                <li class="prep-option option" value="10">Max Prep Time: 10min</li>
+                <li class="prep-option option" value="15">Max Prep Time: 15min</li>
+                <li class="prep-option option" value="20">Max Prep Time: 20min</li>
+                <li class="prep-option option" value="30">Max Prep Time: 30min</li>
+                <li class="prep-option option" value="45">Max Prep Time: 45min</li>
+                <li class="prep-option option" value="60">Max Prep Time: 60min</li>
+            </ul>
+        </div>
+
+        <div id="cook-time-selector" class="selector flex">
+            <div id="cookSelectField" class="selectField">
+                <p>Max Cook Time</p>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <ul class="cook-option-list option-list hidden">
+                <li class="cook-option option" value="5">Max Cook Time: 5min</li>
+                <li class="cook-option option" value="10">Max Cook Time: 10min</li>
+                <li class="cook-option option" value="15">Max Cook Time: 15min</li>
+                <li class="cook-option option" value="20">Max Cook Time: 20min</li>
+                <li class="cook-option option" value="30">Max Cook Time: 30min</li>
+                <li class="cook-option option" value="45">Max Cook Time: 45min</li>
+                <li class="cook-option option" value="60">Max Cook Time: 60min</li>
             </ul>
         </div>
 <!-- 

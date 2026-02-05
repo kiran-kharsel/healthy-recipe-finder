@@ -5,12 +5,21 @@ let recipeList = [];
 const recipeListElem = document.querySelector(".recipe-list");
 const recipeModal = document.querySelector("#recipeModal");
 
-// filter section
+// selector section
+const prepTimeSelector = document.querySelector('#prep-time-selector')
+const prepSelectField = prepTimeSelector.querySelector('#prepSelectField')
+const prepSelectFieldtExt = prepTimeSelector.querySelector('#prepSelectField p')
+const prepOptionList = prepTimeSelector.querySelector('.prep-option-list')
+const prepOption = prepTimeSelector.querySelectorAll('.prep-option')
+
+const cookTimeSelector = document.querySelector('#cook-time-selector')
+const cookSelectField = cookTimeSelector.querySelector('#cookSelectField')
+const cookSelectFieldtExt = cookTimeSelector.querySelector('#cookSelectField p')
+const cookOptionList = cookTimeSelector.querySelector('.cook-option-list')
+const cookOption = cookTimeSelector.querySelectorAll('.cook-option')
+
+// search section
 const recipeSearchInput = document.querySelector(".recipe-search-input");
-const prepTimeSelect = document.querySelector('.selectField')
-const prepTimeSelectText = prepTimeSelect.querySelector('p')
-const prepTimeOptionList = document.querySelector('.selector .option-list')
-const prepTimeOption = document.querySelectorAll('.selector .option')
 
 
 const cookTimeSelect = document.querySelector('#cook-time')
@@ -229,15 +238,31 @@ function searchRecipes(query) {
 
 
 // select prep time
-prepTimeSelect.addEventListener('click', function(){
-  prepTimeOptionList.classList.toggle('hidden')
+prepSelectField.addEventListener('click', function(){
+  console.log('ok')
+  prepOptionList.classList.toggle('hidden')
 });
 
 
-for(option of prepTimeOption){
+for(option of prepOption){
   console.log(option)
   option.onclick = function(){
-    prepTimeSelectText.innerHTML = this.textContent;
-    prepTimeOptionList.classList.add('hidden')
+    prepSelectFieldtExt.innerHTML = this.textContent;
+    prepOptionList.classList.add('hidden')
+    // sort function
+  }
+}
+
+cookSelectField.addEventListener('click', function(){
+  console.log('ok')
+  cookOptionList.classList.toggle('hidden')
+})
+
+for(option of cookOption){
+  console.log(option)
+  option.onclick = function(){
+    cookSelectFieldtExt.innerHTML = this.textContent;
+    cookOptionList.classList.add('hidden')
+    // sort function
   }
 }
