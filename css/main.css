@@ -20,8 +20,9 @@ i {
   font-size: 2rem;
 }
 
-a {
+a, a:visited, a:hover, a:active {
   text-decoration: none;
+  color: inherit;
 }
 
 li {
