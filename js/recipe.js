@@ -214,27 +214,23 @@ function searchRecipes(query) {
 
 
 
-// select prep time
-// prepTimeSelect.addEventListener('change', function(e){
-//   sortTime(e.target.value)
-// })
 
-// cookTimeSelect.addEventListener('change', function(e){
-//   sortTime(e.target.value)
-// })
 
 // // sort time function
-// function sortTime(value){
-//   // value
-//   const prepTime = Number(value);
+function sortTime(value){
+  // value
+  const prepTime = Number(value);
 
-//   // filter array, if prep time is equal and less than
-//   const filteredData = recipeList.filter((item) => 
-//       item.cookTimeMinutes <= prepTime 
-//   )
+  // filter array, if prep time is equal and less than
+  const filteredData = recipeList.filter((item) => 
+    item.cookTimeMinutes <= prepTime 
+  )
 
-//   loadRecipeList(filteredData)
-// }
+  loadRecipeList(filteredData)
+}
+
+
+
 
 
 // select prep time
@@ -243,21 +239,13 @@ prepSelectField.addEventListener('click', function(){
   prepOptionList.classList.toggle('hidden')
 });
 
-document.addEventListener('click', function(e){
-  if(!prepTimeSelector.contains(e.target)){
-    prepOptionList.classList.add('hidden')
-  }
-
-  if(!cookTimeSelector.contains(e.target)){
-    cookOptionList.classList.add('hidden')
-  }
-})
 
 for(option of prepOption){
   option.onclick = function(){
     prepSelectFieldtExt.innerHTML = this.textContent;
     prepOptionList.classList.add('hidden')
     // sort function
+    sortTime(this.value)
   }
 }
 
@@ -270,5 +258,18 @@ for(option of cookOption){
     cookSelectFieldtExt.innerHTML = this.textContent;
     cookOptionList.classList.add('hidden')
     // sort function
+    sortTime(this.value)
   }
 }
+
+
+// close selector if user click outside
+document.addEventListener('click', function(e){
+  if(!prepTimeSelector.contains(e.target)){
+    prepOptionList.classList.add('hidden')
+  }
+
+  if(!cookTimeSelector.contains(e.target)){
+    cookOptionList.classList.add('hidden')
+  }
+})
