@@ -243,9 +243,17 @@ prepSelectField.addEventListener('click', function(){
   prepOptionList.classList.toggle('hidden')
 });
 
+document.addEventListener('click', function(e){
+  if(!prepTimeSelector.contains(e.target)){
+    prepOptionList.classList.add('hidden')
+  }
+
+  if(!cookTimeSelector.contains(e.target)){
+    cookOptionList.classList.add('hidden')
+  }
+})
 
 for(option of prepOption){
-  console.log(option)
   option.onclick = function(){
     prepSelectFieldtExt.innerHTML = this.textContent;
     prepOptionList.classList.add('hidden')
@@ -254,12 +262,10 @@ for(option of prepOption){
 }
 
 cookSelectField.addEventListener('click', function(){
-  console.log('ok')
   cookOptionList.classList.toggle('hidden')
 })
 
 for(option of cookOption){
-  console.log(option)
   option.onclick = function(){
     cookSelectFieldtExt.innerHTML = this.textContent;
     cookOptionList.classList.add('hidden')
