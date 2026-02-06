@@ -160,6 +160,7 @@ img {
 /* rating section */
 .our-purpose{
   padding: 2rem 0px;
+    background-color: var(--accent-light);
 }
 
 .our-purpose .container{
