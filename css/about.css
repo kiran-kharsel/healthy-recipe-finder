@@ -93,12 +93,14 @@ img {
   width: 100%;
   background-color: var(--accent-light);
   padding: 2rem 0px;
+
 }
 
 .our-story .container {
   flex-direction: column;
   align-items: start;
   gap: 1rem;
+  margin: auto;
 }
 
 .our-story .container h1 {
@@ -367,6 +369,8 @@ img {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+     height: 400px;
+     justify-content: center;
   }
 
   .our-story .container p {
@@ -379,6 +383,7 @@ img {
     flex-direction: row;
     flex-wrap: nowrap;
     row-gap: 2.5rem;
+    height: 150px;
   }
 
   .rating-section .rating {
@@ -400,6 +405,9 @@ img {
     height: 450px;
   }
 
+  .our-values{
+    height: 400px;
+  }
   .our-values .cards {
     flex-direction: row;
     gap: 1rem;
