@@ -95,11 +95,61 @@ img {
 .our-story{
   width: 100%;
   background-color: var(--accent-light);
-  padding: 1rem ;
+  padding: 2rem 0px;
 }
 
 .our-story div{
   flex-direction: column;
   align-items: start;
   gap: 1rem;
+}
+
+/* rating section */
+.rating-section{
+  padding: 2.5rem 0px;
+}
+
+.rating-section .container{
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+}
+
+.rating-section .rating{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.rating .rating-icon{
+  background-color: lightgreen;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--accent-dark);
+  border-radius:6px;
+}
+
+.rating-icon i{
+  font-size: 1.8rem;
+  color: var(--accent-dark);
+}
+
+.rating-section .rating-details{
+  width: fit-content;
+}
+
+.rating-section .rating-details h4{
+  color: var(--accent-dark);
+  font-size: 1.6rem;
+}
+
+.rating-section .rating-details p{
+  color: var(--accent-dark);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
 }
