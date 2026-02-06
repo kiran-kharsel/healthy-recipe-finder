@@ -123,7 +123,7 @@ img {
 }
 
 .rating .rating-icon{
-  background-color: lightgreen;
+  background-color: var(--accent-light);
   height: 60px;
   width: 60px;
   display: flex;
