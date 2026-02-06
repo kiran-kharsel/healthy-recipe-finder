@@ -87,10 +87,19 @@ img {
   color: var(--accent-dark);
 }
 
-/* main heading section */
 
-.healthy-recipes {
+
+
+/* our-story section */
+
+.our-story{
+  width: 100%;
+  background-color: var(--accent-light);
+  padding: 1rem ;
+}
+
+.our-story div{
   flex-direction: column;
-  gap: 2rem;
-  margin: 2rem auto;
+  align-items: start;
+  gap: 1rem;
 }
