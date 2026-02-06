@@ -1,4 +1,37 @@
 
+/* utility classes */
+
+.container {
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.cta-btn {
+  width: 50%;
+  height: 70px;
+  background-color: var(--accent-dark);
+  font-size: 1.4rem;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid var(--accent-dark);
+  transition: 0.5s;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cta-btn:hover {
+  background-color: var(--accent-light);
+  color: var(--accent-dark);
+}
 
 /* nav bar */
 .header {
