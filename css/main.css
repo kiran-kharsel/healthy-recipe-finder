@@ -92,68 +92,7 @@ img {
   color: var(--accent-dark);
 }
 
-/* nav bar */
-.header {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  padding: 1rem 0px;
-}
 
-header {
-  width: 100%;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-header .logo {
-  text-transform: capitalize;
-  color: var(--accent-dark);
-  font-size: 1.4rem;
-}
-
-.logo-section{
-  gap: 5px;
-}
-
-header .logo-section .logo-img{
-  width: 2.2rem;
-}
-
-header .hamburger-menu {
-  background-color: var(--accent-light);
-  padding: 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  display: block;
-}
-
-.hamburger-menu i {
-  color: var(--accent-dark);
-}
-
-header .nav-link {
-  background-color: var(--accent-light);
-  border-radius: 5px;
-  width: 100%;
-  height: 200px;
-  flex-direction: column;
-  margin-top: 1rem;
-  gap: 1rem;
-  padding: 1rem 0px;
-}
-
-.nav-link .link {
-  padding: 10px 0px;
-  color: var(--accent-dark);
-  font-size: 1rem;
-  text-transform: capitalize;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-.nav-link .link:hover {
-  scale: 1.4;
-}
 
 /* main section */
 

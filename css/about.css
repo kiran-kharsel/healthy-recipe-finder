@@ -85,7 +85,10 @@ img {
 .cta-btn:hover {
   background-color: var(--accent-light);
   color: var(--accent-dark);
+
+
 }
+
 
 /* our-story section */
 
