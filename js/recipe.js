@@ -1,6 +1,4 @@
-// data array
-let recipeList = [];
-
+// dom elem
 // list section
 const recipeListElem = document.querySelector(".recipe-list");
 const recipeModal = document.querySelector("#recipeModal");
@@ -20,9 +18,7 @@ const cookOption = cookTimeSelector.querySelectorAll('.cook-option')
 
 // search section
 const recipeSearchInput = document.querySelector(".recipe-search-input");
-
-
-const cookTimeSelect = document.querySelector('#cook-time')
+// const cookTimeSelect = document.querySelector('#cook-time')
 
 // modal section
 const recipeModalImg = recipeModal.querySelector(".recipeModal-img img");
@@ -37,7 +33,8 @@ const closeModalBtn = recipeModal.querySelector(".close-modal");
 
 
 
-
+// data array
+let recipeList = [];
 
 // api call to get data
 async function getRecipe() {
@@ -54,7 +51,7 @@ async function getRecipe() {
     const data = await response.json();
 
     // Use the data
-    recipeList = [...data.recipes];
+    recipeList = [...data.recipes] || [];
     loadRecipeList(recipeList);
   } catch (error) {
     // Handle errors
@@ -74,7 +71,7 @@ function loadRecipeList(list) {
   // check for undefined or empt list
   if(!recipes || recipes.length === 0){
     recipeListElem.innerHTML = `
-    <div>
+    <div class='error-msg'>
     <h2>No recipes found .</h2>
 
       <p>Try searching with different keywords or check popular recipes below.</p>
