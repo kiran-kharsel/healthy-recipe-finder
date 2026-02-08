@@ -161,6 +161,10 @@ img {
   text-transform: capitalize;
 }
 
+.rating-details h4 i{
+  font-size: 1.2rem;
+}
+
 /* purpose section */
 .our-purpose {
   padding: 2rem 0px;
