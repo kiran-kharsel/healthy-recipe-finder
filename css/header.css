@@ -84,7 +84,7 @@ header .nav-link {
 }
 
 .nav-link .link {
-  padding: 10px 20px;
+  padding: 10px 100px;
   color: var(--accent-dark);
   font-size: 1rem;
   text-transform: capitalize;
@@ -98,9 +98,14 @@ header .nav-link {
 
 .nav-link .link:hover {
   color: var(--accent-light);
-  box-shadow: inset 200px 0 0 0 var(--accent-dark);
+  box-shadow: inset 300px 0 0 0 var(--accent-dark);
 }
 
+.link.active-link{
+  background-color: var(--accent-dark);
+  color: var(--accent-light);
+  color: white;
+}
 
 @media (min-width: 1024px) {
   .container {
